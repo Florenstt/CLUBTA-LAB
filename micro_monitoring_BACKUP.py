@@ -91,7 +91,7 @@ async def check_master_connection():
     """Reinicia el descubrimiento del maestro si sucede un timeout en el servidor HTTP."""
     timeout_seconds = 5
     while True:
-        # Si new_request_recieved no fue seteado por el HTTP handler, desconectar al maestro
+        # Si `new_request_recieved` no fue seteado por el HTTP handler, desconectar al maestro
         if not master_disconnected.is_set() and not new_request_recieved.is_set():
             print("Maestro desconectado. Volviendo a esperar broadcasts...")
             master_disconnected.set()
@@ -117,7 +117,7 @@ new_request_recieved = asyncio.Event()
 
 async def monitoring(get_app_data):
     """Monitoreo asincrónico con el controlador maestro.
-    get_app_data es una función llamada en cada poll. Debe retornar el dict a enviar al maestro."""
+    `get_app_data` es una función llamada en cada poll. Debe retornar el `dict` a enviar al maestro."""
     print(f"Controlador {TEAM_NAME}")
 
     if_config = await connect_to_wifi(WLAN_SSID, WLAN_PASSWORD)
