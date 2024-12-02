@@ -99,7 +99,7 @@ async def check_master_connection():
         await asyncio.sleep(timeout_seconds)
 
 # Datos para conectarse a la red WiFi.
-WLAN_SSID = "moto g32"
+WLAN_SSID = "motog32"
 WLAN_PASSWORD = "flor1234"
 
 # Datos para la interacción entre los terminales y el maestro.
@@ -135,3 +135,4 @@ async def monitoring(get_app_data):
         start_http_server(HTTP_SERVER_PORT, get_app_data),
         check_master_connection()
     )
+
